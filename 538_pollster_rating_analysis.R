@@ -7,7 +7,7 @@ polls<-fread('http://projects.fivethirtyeight.com/general-model/president_genera
 polls$grade<-polls$grade %>% factor(levels=c('A+','A','A-','B+','B','B-','C+','C','C-','D',''))
 polls$createddate<- polls$createddate %>%  as.Date(format='%m/%d/%g')
 
-states<-read_csv('upshot_state_est.csv')
+# states<-read_csv('upshot_state_est.csv')
 
 analysis<-polls %>% 
   mutate(clinton_advantage=rawpoll_clinton-rawpoll_trump) %>% 
